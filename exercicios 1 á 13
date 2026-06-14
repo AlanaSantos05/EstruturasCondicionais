@@ -1,0 +1,499 @@
+1. Crie um arquivo exercicio_1.md e Informe o valor lógico (verdadeiro ou falso) para as
+proposições lógicas abaixo:
+a. (verdadeiro ) 2 * 4 == 24/3
+b. (falso ) (15 % 4) < (19 % 6)
+c. (verdadeiro ) nao(2 < 5) != (8 == 8)
+d. ( verdadeiro) verdadeiro ou falso
+e. ( verdadeiro) 2*2 == Matematica.potencia(2, 2)
+f. ( falso) verdadeiro e ( (7 / 2) > 3.5 )
+g. (verdadeiro ) (Matematica.arredondar( 2.8, 0 ) == 3) e (Matematica.raiz(9, 2) == 3)
+
+2-
+programa
+{
+	inclua biblioteca Matematica
+-->mat
+	
+	funcao inicio()
+	{
+
+		// Declaração das variáveis
+		real A, B, C, Delta, x1, x2
+
+		// Entrada de dados
+		escreva("Digite o valor de A: ")
+		leia(A)
+
+		// O valor de A não pode ser zero em uma equação do segundo grau
+		se (A == 0) 
+		{
+			escreva("O valor de A não pode ser zero (não é uma equação do segundo grau).\n")
+		}
+		senao 
+		{
+			escreva("Digite o valor de B: ")
+			leia(B)
+			
+			escreva("Digite o valor de C: ")
+			leia(C)
+
+			// Cálculo do Delta (b² - 4ac)
+			Delta = (B * B) - (4 * A * C)
+			escreva("\nO valor de Delta é: ", Delta, "\n")
+
+			// Verificação das condições do Delta
+			se (Delta < 0) 
+			{
+				escreva("A equação não possui raízes reais, pois o Delta é negativo.\n")
+			}
+			senao 
+			{
+				// Cálculo de x1 e x2 com os parênteses corretos na divisão
+				x1 = (-B + mat.raiz(Delta, 2.0)) / (2 * A)
+				x2 = (-B - mat.raiz(Delta, 2.0)) / (2 * A)
+
+				escreva("O valor de x1 é: ", x1, "\n")
+				escreva("O valor de x2 é: ", x2, "\n")
+			}
+		}
+	}
+	
+	
+}
+3-
+programa
+{
+	
+	funcao inicio()
+	{
+		// Declaração de variáveis
+		inteiro dias
+		real km, preco_total
+
+		// Entrada de dados
+		escreva("Digite a quantidade de dias que o carro foi alugado: ")
+		leia(dias)
+
+		escreva("Digite a quantidade de Km percorridos: ")
+		leia(km)
+
+		// Cálculo do preço total
+		// R$ 60.00 por dia e R$ 0.15 por km rodado
+		preco_total = (dias * 60.00) + (km * 0.15)
+
+		// Exibição do resultado
+		escreva("\n---Aluguel ---")
+		escreva("\nDias alugados: ", dias)
+		escreva("\nKm rodados: ", km)
+		escreva("\nTotal a pagar: R$ ", preco_total)
+	}
+}
+4-
+programa
+{
+	
+	funcao inicio()
+	{
+
+		real velocidade, km_excedente, valor_multa
+		real limite_velocidade = 80.0
+		real custo_por_km = 7000.0
+
+		
+		escreva("Informe a velocidade do carro ao passar pelos boxes (em km/h): ")
+		leia(velocidade)
+
+	
+		se (velocidade > limite_velocidade)
+		{
+			
+			km_excedente = velocidade - limite_velocidade
+			
+			
+			valor_multa = km_excedente * custo_por_km
+
+			
+			escreva("\n[ALERTA] O limite de velocidade de 80 km/h foi ultrapassado!")
+			escreva("\nPenalidade: +5 segundos no tempo de corrida.")
+			escreva("\nVelocidade excedente: ", km_excedente, " km/h")
+			escreva("\nMulta aplicada à equipe: $ ", valor_multa, " dólares.")
+		}
+		senao
+		{
+			escreva("\nVelocidade dentro do limite permitido. Sem penalidades.")
+		}
+	}
+5-
+programa
+{
+    funcao inicio()
+    {
+        inteiro temperatura
+        escreva("Informe a temperatura: ")
+        leia(temperatura)
+
+        se (temperatura < 0) 
+        {
+            escreva("negativo")
+        }
+        senao se (temperatura > 0) 
+        {
+            escreva("positivo")
+        }
+        senao 
+        {
+            escreva("a temperatura é zero")
+        }
+    }
+}
+
+6-
+programa
+{
+    funcao inicio()
+    {
+        inteiro numero1, numero2
+
+       
+        escreva("Digite o primeiro número: ")
+        leia(numero1)
+
+     
+        escreva("Digite o segundo número: ")
+        leia(numero2)
+
+       
+        se (numero1 > numero2)
+        {
+            escreva("O maior número é: ", numero1)
+        }
+        senao se (numero2 > numero1)
+        {
+            escreva("O maior número é: ", numero2)
+        }
+        senao
+        {
+            escreva("Os dois números são iguais!")
+        }
+        }
+    }
+    7-
+    programa
+{
+    funcao inicio()
+    {
+        
+        inteiro num1, num2, num3, num4, maior
+
+       
+        escreva("Digite o primeiro número: ")
+        leia(num1)
+
+        escreva("Digite o segundo número: ")
+        leia(num2)
+
+        escreva("Digite o terceiro número: ")
+        leia(num3)
+
+        escreva("Digite o quarto número: ")
+        leia(num4)
+
+       
+        maior = num1
+
+        
+        se (num2 > maior)
+        {
+            maior = num2
+        }
+
+        
+        se (num3 > maior)
+        {
+            maior = num3
+        }
+
+        
+        se (num4 > maior)
+        {
+            maior = num4
+        }
+
+        
+        escreva("O maior número digitado foi: ", maior)
+    }
+}
+8-
+programa
+{
+    funcao inicio()
+    {
+        
+        inteiro num1, num2, num3, aux
+
+        
+        escreva("Digite o primeiro número: ")
+        leia(num1)
+
+        escreva("Digite o segundo número: ")
+        leia(num2)
+
+        escreva("Digite o terceiro número: ")
+        leia(num3)
+ 
+
+       
+        se (num1 < num2)
+        {
+            aux = num1
+            num1 = num2
+            num2 = aux
+        }
+
+       
+        se (num1 < num3)
+        {
+            aux = num1
+            num1 = num3
+            num3 = aux
+        }
+
+        
+        se (num2 < num3)
+        {
+            aux = num2
+            num2 = num3
+            num3 = aux
+        }
+
+       
+        escreva("\nOs números em ordem decrescente são: ", num1, ", ", num2, ", ", num3)
+    }
+}
+9-
+programa
+{
+    funcao inicio()
+    {
+        
+        caracter letra
+
+        escreva("Digite uma letra: ")
+        leia(letra)
+
+        
+        escolha (letra)
+        {
+           
+            caso 'a':
+            caso 'A':
+            caso 'e':
+            caso 'E':
+            caso 'i':
+            caso 'I':
+            caso 'o':
+            caso 'O':
+            caso 'u':
+            caso 'U':
+                escreva("A letra digitada é uma VOGAL.")
+                pare
+            
+
+           
+            caso contrario:
+                escreva("A letra digitada é uma CONSOANTE.")
+                pare
+        }
+    }
+}
+10-
+programa
+{
+    funcao inicio()
+    {
+       
+        real ladoA, ladoB, ladoC
+
+       
+        escreva("Digite o comprimento do lado A: ")
+        leia(ladoA)
+
+        escreva("Digite o comprimento do lado B: ")
+        leia(ladoB)
+
+        escreva("Digite o comprimento do lado C: ")
+        leia(ladoC)
+
+        
+        se ((ladoA + ladoB > ladoC) e (ladoA + ladoC > ladoB) e (ladoB + ladoC > ladoA))
+        {
+           
+            
+            se (ladoA == ladoB e ladoB == ladoC)
+            {
+                escreva("Os lados compõem um: triângulo equilátero")
+            }
+            senao se (ladoA == ladoB ou ladoA == ladoC ou ladoB == ladoC)
+            {
+                escreva("Os lados compõem um: triângulo isósceles")
+            }
+            senao
+            {
+                escreva("Os lados compõem um: triângulo escaleno")
+            }
+        }
+        senao
+        {
+            
+            escreva("Não compõem triângulo")
+        }
+    }
+}
+11-
+programa
+{
+    inclua biblioteca Calendario --> c
+    
+    funcao inicio()
+    {
+        inteiro ano
+
+        escreva("Digite um ano qualquer: ")
+        leia(ano)
+
+        
+        se (ano <= 0)
+        {
+            ano = c.ano_atual()
+            escreva("Ano inválido ou zero. Considerando o ano atual: ", ano, "\n")
+        }
+
+       
+        se (ano % 4 == 0)
+        {
+           
+            se (ano % 100 == 0)
+            {
+                
+                se (ano % 400 == 0)
+                {
+                    
+                    escreva("O ano ", ano, " é bissexto (tem 366 dias).")
+                }
+                senao
+                {
+                   
+                    escreva("O ano ", ano, " não é um ano bissexto (tem 365 dias).")
+                }
+            }
+            senao
+            {
+                
+                escreva("O ano ", ano, " é bissexto (tem 366 dias).")
+            }
+        }
+        senao
+        {
+            
+            escreva("O ano ", ano, " não é um ano bissexto (tem 365 dias).")
+        }
+    }
+}
+12-
+programa
+{
+    funcao inicio()
+    {
+       
+        real nota1, nota2, media
+
+        
+        escreva("Digite a primeira nota: ")
+        leia(nota1)
+
+        escreva("Digite a segunda nota: ")
+        leia(nota2)
+
+        
+        media = (nota1 + nota2) / 2
+
+        
+        escreva("\nMédia alcançada: ", media, "\n")
+
+       
+        se (media == 10.0)
+        {
+            escreva("Aprovado com Distinção")
+        }
+        
+        senao se (media >= 7.0)
+        {
+            escreva("Aprovado")
+        }
+       
+        senao
+        {
+            escreva("Reprovado")
+        }
+    }
+}
+13-
+No código anterior, notei que cometi um pequeno erro de digitação na linha do teste final! Eu escrevi leia(codigo_valido) em vez de usar um se.
+
+Aqui está o código corrigido e pronto para rodar sem erros:
+
+Snippet de código
+programa
+{
+    funcao inicio()
+    {
+        // Declaração das variáveis
+        inteiro codigo, quantidade
+        real preco_unitario = 0.0, valor_total
+        logico codigo_valido = verdadeiro
+
+        // Entrada de dados
+        escreva("Digite o código do item pedido: ")
+        leia(codigo)
+
+        escreva("Digite a quantidade: ")
+        leia(quantidade)
+
+        // Estrutura de escolha para definir o preço com base no código
+        escolha (codigo)
+        {
+            caso 100:
+                preco_unitario = 5.00 // Cachorro quente
+                pare
+            caso 101:
+                preco_unitario = 2.60 // Bauru
+                pare
+            caso 102:
+                preco_unitario = 3.80 // Bauru c/ovo
+                pare
+            caso 103:
+                preco_unitario = 9.00 // Hamburger
+                pare
+            caso 104:
+                preco_unitario = 11.00 // Cheeseburger
+                pare
+            caso 105:
+                preco_unitario = 3.00 // Refrigerante
+                pare
+            caso 106:
+                preco_unitario = 1000.00 // Semente dos Deuses
+                pare
+            caso contrario:
+                codigo_valido = falso
+                escreva("Código inválido! Não foi possível calcular o valor.\n")
+                pare
+        }
+
+        // CORREÇÃO: Se o código for válido, calcula e mostra o resultado
+        se (codigo_valido == verdadeiro)
+        {
+            valor_total = preco_unitario * quantidade
+            escreva("\nValor a ser pago por aquele lanche: R$ ", valor_total, "\n")
+        }
+    }
+}
